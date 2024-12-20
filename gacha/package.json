@@ -1,0 +1,30 @@
+{
+  "name": "@exilium-moe/gacha",
+  "module": "index.ts",
+  "type": "module",
+  "exports": {
+    "./services/*": "./src/services/*.ts",
+    "./types/*": "./src/types/*.ts",
+    "./utils/*": "./src/utils/*.ts",
+    "./constants/*": "./src/constants/*.ts",
+    "./data/*": "./src/data/*.ts",
+    "./data/utils/*": "./src/data/utils/*.ts",
+    "./utils/gacha-record-processor": "./src/utils/gacha-record-processor/index.ts"
+  },
+  "dependencies": {
+    "@exilium-moe/shared": "workspace:*",
+    "axios": "^1.7.8",
+    "dayjs": "^1.11.13",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "vitest": "^2.1.8"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "test": "vitest"
+  }
+}

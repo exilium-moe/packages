@@ -1,0 +1,20 @@
+{
+  "name": "@exilium-moe/shared",
+  "exports": {
+    "./types/*": "./src/types/*.ts",
+    "./utils/*": "./src/utils/*.ts",
+    "./data/*": "./src/data/*.ts"
+  },
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@sindresorhus/slugify": "^2.2.1",
+    "zod": "^3.24.1"
+  }
+}
