@@ -5,6 +5,11 @@ import type { GachaRecordResponse } from "../types/GachaRecordResponse"
 import type { GachaPageDTO } from "../types/GachaPage.dto"
 
 export const gachaRecordService = (server: ServerEnum) => {
+  /**
+   * We can change how many rows we can request, from 1 to 20
+   */
+  const ITEMS_PER_PAGE = 20
+
   const BASE_URL =
     {
       dw: servers.DW_GACHA_RECORD_URL,
@@ -32,7 +37,7 @@ export const gachaRecordService = (server: ServerEnum) => {
     token: string,
     next: string | null = null, // Updated to accept `null` to start fresh
     maxPages: number = Number.POSITIVE_INFINITY,
-    currentPage = 0,
+    currentPage = 0
   ): Promise<GachaPageDTO> => {
     try {
       // Stop recursion if the maximum number of pages has been reached
@@ -50,6 +55,7 @@ export const gachaRecordService = (server: ServerEnum) => {
       const params = new URLSearchParams()
       params.append("type_id", type_id.toString())
       params.append("u", u.toString())
+      params.append("limit", ITEMS_PER_PAGE.toString())
 
       // If next is not null, add it to the params
       if (next !== null) {
@@ -71,7 +77,7 @@ export const gachaRecordService = (server: ServerEnum) => {
           token,
           nextPage, // Recursively fetch the next page
           maxPages,
-          currentPage + 1,
+          currentPage + 1
         )
         // Merge the current records with the next ones
         return {
