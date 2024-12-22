@@ -48,8 +48,6 @@ export const gachaRecordService = (server: ServerEnum) => {
       const headers = {
         Authorization: token,
         "Content-Type": "application/x-www-form-urlencoded",
-        "X-Unity-Version": "2019.4.40f1",
-        "User-Agent": "UnityPlayer/2019.4.40f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)",
       }
 
       const params = new URLSearchParams()
