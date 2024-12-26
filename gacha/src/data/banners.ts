@@ -108,7 +108,7 @@ const targetedBanners: BannerInfo[] = [
     endDate: "2025-01-15 22:59",
     // Bittersweet Caramel
     rateUp5Ids: [10343],
-    // WA 2000, Hare, Robinson Modular Rifle
+    // Walther WA2000, Hare, Robinson Modular Rifle
     rateUp4Ids: [10342, 11007, 11031],
   },
   {

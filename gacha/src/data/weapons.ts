@@ -29,7 +29,7 @@ const rawWeapons: Omit<Weapon, "slug">[] = [
   { id: 10132, name: "通用冲锋枪9", rarity: "SR" },
   { id: 10232, name: "科夫罗夫", rarity: "SR" },
   { id: 10332, name: "Three-Line Rifle M1891", rarity: "SR", type: "RF" },
-  { id: 10342, name: "WA 2000", rarity: "SR" },
+  { id: 10342, name: "Walther WA2000", rarity: "SR" },
   { id: 10352, name: "九七式", rarity: "SR" },
   { id: 10362, name: "Stechkin", rarity: "SR", type: "HG" },
   { id: 10372, name: "Pluma Edge", rarity: "SR", type: "BLD" },
