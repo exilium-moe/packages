@@ -3,7 +3,8 @@
   "exports": {
     "./types/*": "./src/types/*.ts",
     "./utils/*": "./src/utils/*.ts",
-    "./data/*": "./src/data/*.ts"
+    "./data/*": "./src/data/*.ts",
+    "./config/*": "./src/config/*.ts"
   },
   "module": "index.ts",
   "type": "module",

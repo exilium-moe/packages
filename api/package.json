@@ -1,0 +1,15 @@
+{
+  "name": "@exilium-moe/api",
+  "exports": {
+    "./services/*": "./src/services/*.ts"
+  },
+  "module": "index.ts",
+  "type": "module",
+  "dependencies": {
+    "@exilium-moe/shared": "workspace:*",
+    "axios": "^1.7.8"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
