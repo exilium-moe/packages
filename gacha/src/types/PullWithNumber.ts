@@ -5,6 +5,7 @@ export const MAX_PITY_4 = 10;
 export const MAX_PITY_5 = 80;
 
 export const PullWithNumberSchema = PullSchema.extend({
+  num: z.number().gte(1),
   p4: z.number().gte(1).lte(MAX_PITY_4),
   p5: z.number().gte(1).lte(MAX_PITY_5),
 });

@@ -1,31 +1,31 @@
-import type { CardPoolTypeEnum } from "../types/CardPoolTypeEnum"
+import type { CardPoolTypeEnum } from "../types/CardPoolTypeEnum";
 
 /**
  * Represents a rate-up rule with associated featured gacha item names and date range.
  */
 export type BannerInfo =
   | {
-      pool_id: number
-      cardPoolType: Extract<CardPoolTypeEnum, 3 | 4>
-      name: string
-      rateUp5Ids: number[] // Mandatory for cardPoolType 3 or 4
-      rateUp4Ids: number[]
-      startDate: string
-      endDate: string
-      isCstStart?: boolean
-      isCstEnd?: boolean
+      pool_id: number;
+      cardPoolType: Extract<CardPoolTypeEnum, 3 | 4>;
+      name: string;
+      rateUp5Ids: number[]; // Mandatory for cardPoolType 3 or 4
+      rateUp4Ids: number[];
+      startDate: string;
+      endDate: string;
+      isCstStart?: boolean;
+      isCstEnd?: boolean;
     }
   | {
-      pool_id: number
-      cardPoolType: Exclude<CardPoolTypeEnum, 3 | 4>
-      name: string
-      rateUp5Ids?: number[] // Optional for non-featured banner
-      rateUp4Ids?: number[]
-      startDate: string
-      endDate: string
-      isCstStart?: boolean
-      isCstEnd?: boolean
-    }
+      pool_id: number;
+      cardPoolType: Exclude<CardPoolTypeEnum, 3 | 4>;
+      name: string;
+      rateUp5Ids?: number[]; // Optional for non-featured banner
+      rateUp4Ids?: number[];
+      startDate: string;
+      endDate: string;
+      isCstStart?: boolean;
+      isCstEnd?: boolean;
+    };
 
 const standardBanners: BannerInfo[] = [
   {
@@ -42,7 +42,7 @@ const standardBanners: BannerInfo[] = [
     startDate: "2024-12-01 00:00",
     endDate: "2222-12-01 00:00",
   },
-]
+];
 
 const targetedBanners: BannerInfo[] = [
   {
@@ -133,13 +133,15 @@ const targetedBanners: BannerInfo[] = [
     // Model Alpha, Model ARM, Stechkin
     rateUp4Ids: [11037, 10382, 10362],
   },
-]
+];
 
-export const banners: BannerInfo[] = [...standardBanners, ...targetedBanners]
+export const banners: BannerInfo[] = [...standardBanners, ...targetedBanners];
 
 /**
  * Constants
  */
-export const BANNER_IDS: CardPoolTypeEnum[] = [1, 5, 3, 4]
-export const FEATURED_BANNERS: BannerInfo[] = banners.filter(b => [3, 4].includes(b.cardPoolType))
-export const POOL_IDS: number[] = banners.map(b => b.pool_id)
+export const CARD_POOLS: CardPoolTypeEnum[] = [1, 5, 3, 4];
+export const FEATURED_BANNERS: BannerInfo[] = banners.filter((b) =>
+  [3, 4].includes(b.cardPoolType)
+);
+export const POOL_IDS: number[] = banners.map((b) => b.pool_id);
