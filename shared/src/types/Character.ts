@@ -1,7 +1,4 @@
 import { z } from "zod";
-import { CharacterClassEnumSchema } from "./CharacterClassEnum";
-import { WeaponTypeEnumSchema } from "./WeaponTypeEnum";
-import { ElementEnumSchema } from "./ElementEnum";
 import { RarityEnumSchema } from "./RarityEnum";
 
 export const CharacterSchema = z.object({
@@ -9,9 +6,6 @@ export const CharacterSchema = z.object({
   code: z.string(), // helps determine the assets to load, ie. BiyocaSSR
   name: z.string(),
   slug: z.string(),
-  class: CharacterClassEnumSchema,
-  weapon: WeaponTypeEnumSchema,
-  element: ElementEnumSchema,
   rarity: RarityEnumSchema,
   img: z.object({
     icon: z.string(),
