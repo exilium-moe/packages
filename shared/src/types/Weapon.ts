@@ -11,6 +11,7 @@ export const WeaponSchema = z.object({
   rarity: RarityEnumSchema,
   img: z.object({
     whole: z.string(),
+    icon: z.string(),
   }),
 });
 
