@@ -1,0 +1,43 @@
+name: Send submodule updates to multiple parent repos
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Update repository - exilium-moe/site
+        uses: actions/checkout@v2
+        with:
+          repository: exilium-moe/site
+          token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
+          submodules: true
+      - name: Pull & update submodules for exilium-moe/site
+        run: |
+          git submodule update --init --recursive
+          git submodule update --recursive --remote
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions - Update Submodules"
+          git add --all
+          git commit -m "ci: update submodules for exilium-moe/site" || echo "No changes to commit"
+          git push
+
+      - name: Update repository - exilium-moe/cf
+        uses: actions/checkout@v2
+        with:
+          repository: exilium-moe/cf
+          token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
+          submodules: true
+      - name: Pull & update submodules for exilium-moe/cf
+        run: |
+          git submodule update --init --recursive
+          git submodule update --recursive --remote
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions - Update Submodules"
+          git add --all
+          git commit -m "ci: update submodules for exilium-moe/cf" || echo "No changes to commit"
+          git push

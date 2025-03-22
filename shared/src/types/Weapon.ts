@@ -4,6 +4,7 @@ import { WeaponTypeEnumSchema } from "./WeaponTypeEnum";
 
 export const WeaponSchema = z.object({
   id: z.number(),
+  code: z.string(), // helps determine the assets to load, ie. G11_5
   name: z.string(),
   slug: z.string(),
   type: z.optional(WeaponTypeEnumSchema),

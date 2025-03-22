@@ -6,6 +6,7 @@ import { RarityEnumSchema } from "./RarityEnum";
 
 export const CharacterSchema = z.object({
   id: z.number(),
+  code: z.string(), // helps determine the assets to load, ie. BiyocaSSR
   name: z.string(),
   slug: z.string(),
   class: CharacterClassEnumSchema,
