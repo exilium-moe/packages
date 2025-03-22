@@ -8,6 +8,9 @@ export const WeaponSchema = z.object({
   slug: z.string(),
   type: z.optional(WeaponTypeEnumSchema),
   rarity: RarityEnumSchema,
+  img: z.object({
+    whole: z.string(),
+  }),
 });
 
 export type Weapon = z.infer<typeof WeaponSchema>;

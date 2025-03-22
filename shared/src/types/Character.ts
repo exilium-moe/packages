@@ -12,6 +12,10 @@ export const CharacterSchema = z.object({
   weapon: WeaponTypeEnumSchema,
   element: ElementEnumSchema,
   rarity: RarityEnumSchema,
+  img: z.object({
+    icon: z.string(),
+    whole: z.string(),
+  }),
 });
 
 export type Character = z.infer<typeof CharacterSchema>;
