@@ -4,7 +4,6 @@ import { sortRecords } from "./sort-records";
 
 export function convertPullsToPullsWithNumbers(
   rawPulls: Pull[],
-  previousPullNumber = 0,
   previousPity4 = 0,
   previousPity5 = 0
 ): PullWithNumber[] {
@@ -15,7 +14,6 @@ export function convertPullsToPullsWithNumbers(
 
   return pulls.map((p, i) => {
     const toReturn = {
-      num: previousPullNumber + i + 1,
       p4: pity4 + 1,
       p5: pity5 + 1,
       ...p,

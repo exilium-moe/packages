@@ -14,7 +14,6 @@ export const convertPullsToPullsForDb = (
     uid: number;
     server: ServerEnum;
   },
-  previousPullNumber: number,
   previousPity4: number,
   previousPity5: number
 ): PullForDb[] => {
@@ -40,7 +39,6 @@ export const convertPullsToPullsForDb = (
 
   const pullsToInsert = convertPullsToPullsWithNumbers(
     pulls,
-    previousPullNumber,
     previousPity4,
     previousPity5
   );
